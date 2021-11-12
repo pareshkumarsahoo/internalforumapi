@@ -376,6 +376,7 @@ router.post("/register", async (req, res) => {
 */
 
 router.post("/login", async (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
   User.find({ email: req.body.email })
     .exec()
     .then((users) => {
