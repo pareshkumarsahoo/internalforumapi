@@ -1,3 +1,5 @@
+'use strict';
+
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -9,7 +11,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 const PORT = process.env.PORT || 5000;
 // cors middleware
-app.use(cors());
 const corsConfig = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Credentials', true);
