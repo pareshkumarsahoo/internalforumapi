@@ -8,12 +8,12 @@ const bodyParser = require("body-parser");
 //Bodyparser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(cors({
-    origin: '*'
-}));
-app.use(cors({
-    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
-}));
+// app.use(cors({
+//     origin: '*'
+// }));
+// app.use(cors({
+//     methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+// }));
 const PORT = process.env.PORT || 5000;
 // cors middleware
 // const corsConfig = function(req, res, next) {
@@ -27,7 +27,7 @@ const PORT = process.env.PORT || 5000;
 
 // app.options('*', cors());
 
-// app.use(cors());
+app.use(cors());
 const Routes = require("./routes/Routes");
 const db = require("./config/keys");
 mongoose
