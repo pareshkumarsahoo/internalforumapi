@@ -4,6 +4,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 const bodyParser = require("body-parser");
+const cors = require('cors');
 
 //Bodyparser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -14,7 +15,7 @@ app.use(cors({
 app.use(cors({
     methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
 }));
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8000;
 // cors middleware
 // const corsConfig = function(req, res, next) {
 //     res.header('Access-Control-Allow-Origin', '*');
